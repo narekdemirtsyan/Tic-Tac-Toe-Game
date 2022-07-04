@@ -1,0 +1,12 @@
+
+.SquareDiv {
+    border: 2px solid black;
+    font-size: 25px;
+    padding: 30px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
