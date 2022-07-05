@@ -14,7 +14,6 @@ const Board = ({squares, setSquares, disable, setDisable, setRightAnswer}) => {
         return movements;
     };
 
-    // console.log(squares, "squares")
     const Empty = (squares) => {
         return squares.every((item) => !item);
     };
@@ -27,7 +26,6 @@ const Board = ({squares, setSquares, disable, setDisable, setRightAnswer}) => {
     const handleClick = (i) => {
 
         if (squares[i] !== "") return;
-        // console.log(squares[i], "iiiiiiiii")
 
         const newSquares = [...squares];
         newSquares[i] = "X";
@@ -55,7 +53,6 @@ const Board = ({squares, setSquares, disable, setDisable, setRightAnswer}) => {
             setRightAnswer("Draw")
             setDisable(false)
         }
-        // console.log(isChecked(newSquares), "vv")
 
     };
 
@@ -100,7 +97,6 @@ const Board = ({squares, setSquares, disable, setDisable, setRightAnswer}) => {
 
     const minimax = (newSquares, depth, isMaximizing) => {
             if (depth === 0) setObj({});
-        // console.log(newSquares, depth, isMaximizing, "max")
 
             if (isChecked(newSquares) || depth === -1) {
                 if (isChecked(newSquares).victory === "X") {
@@ -118,7 +114,6 @@ const Board = ({squares, setSquares, disable, setDisable, setRightAnswer}) => {
                     copySquare[i] = "X";
 
                     let score = minimax(copySquare, depth + 1, false);
-                    // console.log(score, "score")
                     bestMax = Math.max(bestMax, score);
                 });
 
@@ -136,7 +131,6 @@ const Board = ({squares, setSquares, disable, setDisable, setRightAnswer}) => {
                     bestMax = Math.min(bestMax, score);
 
                     if (depth === 0) {
-                        // console.log(obj);
                         obj[score] = obj[score] ? `${obj[score]},${i}` : i;
                     }
                 });
