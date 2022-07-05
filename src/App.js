@@ -13,7 +13,7 @@ function App() {
         setRightAnswer("")
         setDisable(true)
     }
-
+    alert(4)
   return (
     <div className="App">
         <h1>Tic tac toe Game</h1>
